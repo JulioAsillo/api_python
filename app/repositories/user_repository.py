@@ -9,6 +9,11 @@ class UserRepository:
         self.users.append(user)
         return user
 
+    def add_users(self, users: List[User]) -> List[User]:
+        for user in users:
+            self.users.append(user)
+        return users
+
     def get_user(self, user_id: int) -> Optional[User]:
         for user in self.users:
             if user.id == user_id:

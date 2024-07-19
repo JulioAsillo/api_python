@@ -11,6 +11,9 @@ class UserService:
     def create_user(self, user: User) -> User:
         return self.user_repository.add_user(user)
 
+    def create_users(self, users: List[User]) -> List[User]:
+        return self.user_repository.add_users(users)
+
     def get_user(self, user_id: int) -> Optional[User]:
         return self.user_repository.get_user(user_id)
 

@@ -12,6 +12,9 @@ user_service = UserService(UserRepository())
 @router.post("/users/", response_model=User)
 def create_user(user: User):
     return user_service.create_user(user)
+@router.post("/users/batch", response_model=List[User])
+def create_users(users: List[User]):
+    return user_service.create_users(users)
 
 @router.get("/users/{user_id}", response_model=User)
 def read_user(user_id: int):
